@@ -15,6 +15,7 @@ public class PickColorServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("/viewcolor");
+        String color = req.getParameter("color-picker");
+        resp.sendRedirect("viewcolor?color=" + color);
     }
 }

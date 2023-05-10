@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Pick a Color!</h1>
-    <form method="post" action="/viewcolor">
+    <form method="post" action="pickcolor">
         <label for="color-picker">Type in your color:</label>
         <input type="text" name="color-picker" id="color-picker">
         <input type="submit" value="submit">

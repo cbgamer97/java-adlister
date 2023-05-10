@@ -16,14 +16,17 @@ public class OrderPizzaServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String[] crusts = req.getParameterValues("crust");
-        String[] sauces = req.getParameterValues("sauce");
-        String[] sizes = req.getParameterValues("size");
+        String crust = req.getParameter("crust");
+        String sauces = req.getParameter("sauce");
+        String sizes = req.getParameter("size");
         String[] toppings = req.getParameterValues("topping");
         String address = req.getParameter("address");
 
-        System.out.println(Arrays.toString(crusts) + Arrays.toString(sauces)
-                + Arrays.toString(sizes)+ Arrays.toString(toppings) + address);
+        System.out.println(crust + ' ' + sauces + ' ' + sizes);
+        for(String topping : toppings){
+            System.out.println(topping);
+        }
+        System.out.println(address);
         req.getRequestDispatcher("pizza-order.jsp").forward(req, resp);
     }
 }

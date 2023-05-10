@@ -4,6 +4,6 @@
     <title>Outcome</title>
 </head>
 <body>
-
+    ${outcome}
 </body>
 </html>

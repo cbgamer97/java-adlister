@@ -9,12 +9,12 @@ import java.io.IOException;
 public class IncorrectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("outcome.jsp").forward(req, resp);
+        req.setAttribute("outcome", "You lose!");
+        req.getRequestDispatcher("/outcome.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("<h1>Incorrect!</h1>");
-        req.getRequestDispatcher("outcome.jsp").forward(req, resp);
+
     }
 }

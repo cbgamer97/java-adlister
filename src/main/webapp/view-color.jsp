@@ -4,11 +4,10 @@
 <head>
     <title>View Color</title>
     <style>
-        <c:if test="${backgroundColor != null}">
         html {
-            background: ${backgroundColor};
+            background: ${color};
         }
-        </c:if>
+
     </style>
 </head>
 <body>
