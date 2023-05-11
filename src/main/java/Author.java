@@ -1,9 +1,20 @@
+import java.util.List;
+
 public class Author {
-    private int id;
+    private Long id;
     private String firstName;
     private String lastName;
+    private List<Quotes> quotes;
 
-    public Author(int id, String firstName, String lastName) {
+    public List<Quotes> getQuotes() {
+        return quotes;
+    }
+
+    public void setQuotes(List<Quotes> quotes) {
+        this.quotes = quotes;
+    }
+
+    public Author(Long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -12,11 +23,11 @@ public class Author {
     public Author() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

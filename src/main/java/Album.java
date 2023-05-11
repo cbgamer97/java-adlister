@@ -1,13 +1,13 @@
 public class Album {
 
-    private int id;
+    private Long id;
     private String artist;
     private String name;
     private int releaseDate;
     private double sales;
     private String genre;
 
-    public Album(int id, String artist, String name, int releaseDate, double sales, String genre) {
+    public Album(Long id, String artist, String name, int releaseDate, double sales, String genre) {
         this.id = id;
         this.artist = artist;
         this.name = name;
@@ -19,11 +19,11 @@ public class Album {
     public Album() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

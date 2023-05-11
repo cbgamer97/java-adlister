@@ -1,12 +1,12 @@
 public class Quotes {
 
-    private int id;
+    private Long id;
 
     private String content;
 
     private Author author;
 
-    public Quotes(int id, String content, Author author) {
+    public Quotes(Long id, String content, Author author) {
         this.id = id;
         this.content = content;
         this.author = author;
@@ -15,11 +15,11 @@ public class Quotes {
     public Quotes() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
