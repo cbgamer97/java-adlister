@@ -2,21 +2,15 @@ package models;
 
 public class Post {
     private String title;
-    private String post;
-    private String[] topics;
+    private String body;
+    private User user;
 
-    public Post(String title, String post, String[] topics) {
-        this.title = title;
-        this.post = post;
-        this.topics = topics;
+    public User getUser() {
+        return user;
     }
 
-    public String[] getTopics() {
-        return topics;
-    }
-
-    public void setTopics(String[] topics) {
-        this.topics = topics;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getTitle() {
@@ -27,12 +21,12 @@ public class Post {
         this.title = title;
     }
 
-    public String getPost() {
-        return post;
+    public String getBody() {
+        return body;
     }
 
-    public void setPost(String post) {
-        this.post = post;
+    public void setBody(String post) {
+        this.body = post;
     }
 
     public Post() {
@@ -40,6 +34,12 @@ public class Post {
 
     public Post(String title, String post) {
         this.title = title;
-        this.post = post;
+        this.body = post;
+    }
+
+    public Post(String title, String body, User user) {
+        this.title = title;
+        this.body = body;
+        this.user = user;
     }
 }
