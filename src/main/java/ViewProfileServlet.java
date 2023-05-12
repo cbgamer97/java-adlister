@@ -10,11 +10,16 @@ import java.io.IOException;
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        if (session.getAttribute("user") == null) {
+//        if (session.getAttribute("user") == null) {
+//            response.sendRedirect("/login");
+//            return;
+//        }
+        boolean isLoggedIn = session.getAttribute("user") != null;
+        if(!isLoggedIn){
             response.sendRedirect("/login");
             return;
-        } else {
-            request.getRequestDispatcher("/profile.jsp").forward(request, response);
         }
+        request.getRequestDispatcher("/profile.jsp").forward(request, response);
+
     }
 }

@@ -12,7 +12,11 @@ public class LoginServlet extends HttpServlet {
         request.getRequestDispatcher("/login.jsp").forward(request, response);
         HttpSession session = request.getSession();
         String language = (String) session.getAttribute("language");
-
+        boolean isLoggedIn = session.getAttribute("user") != null;
+        if(isLoggedIn){
+            response.sendRedirect("/login");
+            return;
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -24,9 +28,10 @@ public class LoginServlet extends HttpServlet {
         if (validAttempt) {
             session.setAttribute("user", username);
             response.sendRedirect("/profile");
-        } else {
-            response.sendRedirect("/login");
+            return;
         }
+        response.sendRedirect("/login");
+
 
 
     }
