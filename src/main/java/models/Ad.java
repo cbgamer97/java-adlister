@@ -1,8 +1,33 @@
+package models;
+
+import dao.UsersDao;
+
 public class Ad {
     private long id;
     private long userId;
     private String title;
     private String description;
+
+    private User user;
+
+    public Ad(long id, long userId, String title, String description, User user) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Ad() {
+    }
 
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
