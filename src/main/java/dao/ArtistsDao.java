@@ -1,6 +1,7 @@
 package dao;
 
 import com.mysql.cj.jdbc.Driver;
+import config.Config;
 import models.Artist;
 
 import java.sql.*;
@@ -9,15 +10,15 @@ import java.util.List;
 
 public class ArtistsDao implements Artists {
 
-    private Connection connection;
+    private final Connection connection;
 
     public ArtistsDao() {
         try {
             DriverManager.registerDriver(new Driver());
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/codeup_test_db?allowPublicKeyRetrieval=true&useSSL=false",
-                    "root",
-                    "codeup"
+            this.connection = DriverManager.getConnection(
+                    Config.getUrl(),
+                    Config.getUser(),
+                    Config.getPassword()
             );
         } catch (SQLException sqlx) {
             throw new RuntimeException("Error connecting to database");
@@ -39,7 +40,7 @@ public class ArtistsDao implements Artists {
                 artists.add(artist);
             }
         } catch (SQLException sqlx) {
-            throw new RuntimeException("error connecting to database");
+            throw new RuntimeException("error connecting to database", sqlx);
         }
         return artists;
     }
