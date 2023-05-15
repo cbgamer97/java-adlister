@@ -10,6 +10,13 @@ public class Ad {
 
     private User user;
 
+    public Ad(long id, String title, String description, User user) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.user = user;
+    }
+
     public Ad(long id, long userId, String title, String description, User user) {
         this.id = id;
         this.userId = userId;

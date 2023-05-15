@@ -17,3 +17,4 @@ CREATE TABLE ads(
     description CHAR(200),
     PRIMARY KEY (id)
 );
+

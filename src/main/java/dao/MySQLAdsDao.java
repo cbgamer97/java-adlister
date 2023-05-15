@@ -42,11 +42,11 @@ public class MySQLAdsDao implements Ads{
                 }
                 Ad ad = new Ad(
                     resultSet.getInt("id"),
-                        resultSet.getInt("id"),
-                        resultSet.getString("email"),
-                        resultSet.getString("description"),
-                        userName
+                    resultSet.getString("title"),
+                    resultSet.getString("description"),
+                    userName
                 );
+                ads.add(ad);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
